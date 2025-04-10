@@ -59,7 +59,7 @@ public class webSteps {
     public void waiting() throws InterruptedException {
         Thread.sleep(2000);
     }
-    
+
     public void scrollToElement(String locator) throws InterruptedException {
         By xpath = constructElement(findElementRepo(locator));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(10000));
