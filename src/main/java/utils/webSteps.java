@@ -23,7 +23,6 @@ public class webSteps {
     public webSteps(WebDriver driver) {
         webSteps.driver = driver;
 
-        // Load email and password from properties file
         Properties properties = propertyLoader.loadProperties("src/main/resources/dataset.properties");
         this.username = properties.getProperty("username");
         this.password = properties.getProperty("password");
@@ -37,7 +36,6 @@ public class webSteps {
         waiting();
     }
 
-    // Common method to type text into an input field
     public void type(String text, String locator) throws InterruptedException {
         By xpath = constructElement(findElementRepo(locator));
         WebElement inputField = driver.findElement(xpath);
@@ -46,8 +44,6 @@ public class webSteps {
         waiting();
     }
 
-
-    // Common method to click an element
     public void click(String locator) throws InterruptedException {
         By xpath = constructElement(findElementRepo(locator));
         WebElement button =  driver.findElement(xpath);
@@ -55,18 +51,15 @@ public class webSteps {
         waiting();
     }
 
-    // Common method to get text from an element
     public String getText(String locator) {
         By xpath = constructElement(findElementRepo(locator));
         return driver.findElement(xpath).getText();
     }
 
-    // Method to wait 2000ms
     public void waiting() throws InterruptedException {
         Thread.sleep(2000);
     }
-
-    // Method for scroll to given element
+    
     public void scrollToElement(String locator) throws InterruptedException {
         By xpath = constructElement(findElementRepo(locator));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(10000));
