@@ -11,10 +11,9 @@ import java.io.IOException;
 public class Login extends baseTest {
     @BeforeMethod
     public void setUp() throws InterruptedException, IOException {
-
         loadUrl();
         webSteps.login();
-        extentReportManager.startTest("Test Cases for Login", "<b> Login </b>");
+        extentReportManager.startTest("Login Functionality", "<b> Login </b>");
         extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC01: Verify user can log in with valid credentials</b>");
         extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Open URL > Enter valid credentials > Click login");
         webSteps.waiting();
