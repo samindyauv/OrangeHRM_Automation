@@ -36,4 +36,15 @@ public class User_Management extends baseTest{
         webSteps.implicitWait("UM_toastMessage");
         Assert.assertEquals("Successfully Saved",webSteps.getText("UM_toastMessage"), "Passed");
     }
+
+    @Test(priority = 2)
+    public void searchuserUsingUsername() throws InterruptedException, AWTException {
+        extentReportManager.startTest("Test Cases for Admin", "<b> Search user using username</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case  : </font>TC02: Verify that the user can successfully search a user using username</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Type in Search > Click Search");
+        webSteps.type("Admin","UM_searchUsername");
+        webSteps.click("UM_searchButton");
+        webSteps.waiting();
+        Assert.assertEquals("Admin", webSteps.getText("UM_searchResultUsername"), "Passed");
+    }
 }
