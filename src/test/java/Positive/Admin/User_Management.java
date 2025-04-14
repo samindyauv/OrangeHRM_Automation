@@ -38,7 +38,7 @@ public class User_Management extends baseTest{
     }
 
     @Test(priority = 2)
-    public void searchuserUsingUsername() throws InterruptedException, AWTException {
+    public void searchUserUsingUsername() throws InterruptedException, AWTException {
         extentReportManager.startTest("Test Cases for Admin", "<b> Search user using username</b>");
         extentReportManager.testSteps("<b><font color='blue'>Test Case  : </font>TC02: Verify that the user can successfully search a user using username</b>");
         extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Type in Search > Click Search");
@@ -49,7 +49,7 @@ public class User_Management extends baseTest{
     }
 
     @Test(priority = 3)
-    public void searchuserUsingUserRole() throws InterruptedException, AWTException {
+    public void searchUserUsingUserRole() throws InterruptedException, AWTException {
         extentReportManager.startTest("Test Cases for Admin", "<b> Search user using user role</b>");
         extentReportManager.testSteps("<b><font color='blue'>Test Case  : </font>TC02: Verify that the user can successfully search a user using user role</b>");
         extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Select in Search > Click Search");
@@ -57,5 +57,18 @@ public class User_Management extends baseTest{
         webSteps.click("UM_searchButton");
         webSteps.waiting();
         Assert.assertEquals("ESS", webSteps.getText("UM_searchResultUserRole"), "Passed");
+    }
+
+    @Test(priority = 4)
+    public void searchUserUsingEmployeeName() throws InterruptedException, AWTException {
+        extentReportManager.startTest("Test Cases for Admin", "<b> Search user using employee name</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case  : </font>TC02: Verify that the user can successfully search a user using employee name</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Select in Search > Click Search");
+        webSteps.type("Orange Silva", "UM_searchEmployeeName");
+        webSteps.waiting();
+        webSteps.select("UM_searchEmployeeName",2,1);
+        webSteps.click("UM_searchButton");
+        webSteps.waiting();
+        Assert.assertEquals("Orange Silva", webSteps.getText("UM_searchResultEmployeeName"), "Passed");
     }
 }
