@@ -71,4 +71,17 @@ public class User_Management extends baseTest{
         webSteps.waiting();
         Assert.assertEquals("Orange Silva", webSteps.getText("UM_searchResultEmployeeName"), "Passed");
     }
+
+    @Test(priority = 5)
+    public void deleteUser() throws InterruptedException, AWTException {
+        extentReportManager.startTest("Test Cases for Admin", "<b> Delete User</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case  : </font>TC02: Verify that the user can successfully delete an user</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Delete");
+        webSteps.waiting();
+        webSteps.click("UM_deleteButton");
+        webSteps.waiting();
+        webSteps.click("UM_deleteConfirmationButton");
+        webSteps.implicitWait("UM_toastMessage");
+        Assert.assertEquals("Successfully Deleted", webSteps.getText("UM_toastMessage"), "Passed");
+    }
 }
