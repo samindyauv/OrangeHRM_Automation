@@ -1,4 +1,4 @@
-package Positive.Admin;
+package Positive.Admin.User_Management;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -8,7 +8,7 @@ import utils.baseTest;
 import java.awt.*;
 import java.io.IOException;
 
-public class User_Management extends baseTest{
+public class Users extends baseTest{
     @BeforeMethod
     public void setUp() throws IOException, InterruptedException {
         loadUrl();

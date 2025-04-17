@@ -1,4 +1,4 @@
-package Positive.Admin;
+package Positive.Admin.Job;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -9,7 +9,7 @@ import utils.extentReportManager;
 import java.awt.*;
 import java.io.IOException;
 
-public class Job extends baseTest {
+public class Job_Titles extends baseTest {
 
     @BeforeMethod
     public void setUp() throws IOException, InterruptedException {
